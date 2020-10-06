@@ -15,11 +15,24 @@ skip_before_action :authenticate_user!
     end
 
     def edit
+      @room = Room.find(params[:id])
+    end
+
+    def update
+    @room = Room.find(params[:id])
+    @room.update(room_params)
+    redirect_to room_path(@room)
     end
 
     def create
       @room = Room.new(room_params)
       @room.save
+    end
+
+    def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    redirect_to root_path
     end
 
     private
