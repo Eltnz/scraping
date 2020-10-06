@@ -1,0 +1,9 @@
+<li><%= @room.name %></li>
+<li><%= @room.adress %></li>
+<li><%= @room.website %></li>
+<li><%= @room.capacity %></li>
+<li><%= link_to 'Edit', edit_room_path %></li>
+<%= link_to "Delete #{@room.name}",
+            room_path(@room),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
