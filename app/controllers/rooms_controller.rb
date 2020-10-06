@@ -3,6 +3,7 @@ skip_before_action :authenticate_user!
 
     def index
       @rooms = Room.all
+      @room = Room.new
     end
 
     def show
@@ -13,8 +14,12 @@ skip_before_action :authenticate_user!
       @room = Room.new
     end
 
+    def edit
+    end
+
     def create
       @room = Room.new(room_params)
+      @room.save
     end
 
     private
