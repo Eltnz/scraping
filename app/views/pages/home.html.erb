@@ -1,6 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+<div class= sidebar></div>
 
+<div class="room">
 <ul>
   <% @rooms.each do |room| %>
     <li><%= room.name %> <%= link_to 'See concerts', room_path(room) %></li>
@@ -9,3 +10,5 @@
 
 
 <%= link_to 'Add a room', new_room_path %>
+</div>
+</div>
